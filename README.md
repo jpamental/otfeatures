@@ -2,7 +2,12 @@ otfeatures
 ==========
 
 A SASS mix-in for turning OpenType features on and off in your embedded web fonts. (Only useful if you're using a web font with embedded OpenType features such as ligatures, swashes, etc)
-
+  
+  
+Easy to use by only passing in the flags you want - so if you only want to turn on common ligatures, you could use:  
+  
+@include otfeatures($liga: 1);  
+  
 OpenType Features Key
 ---------------------
 @mixin otfeatures($c2sc: 0, $calt: 0, $clig: 0, $dlig: 0, $frac: 0, $hist: 0, $hlig: 0, $kern: 0, $liga: 0, $nalt: 0, $salt: 0, $ss01: 0, $ss02: 0, $ss03: 0, $ss04: 0, $ss05: 0, $swsh: 0, $zero: 0)  
