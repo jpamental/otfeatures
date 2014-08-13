@@ -10,7 +10,7 @@ Easy to use by only passing in the flags you want - so if you only want to turn 
   
 ## OpenType Features Key
 
-@mixin otfeatures($c2sc: 0, $calt: 0, $clig: 0, $dlig: 0, $frac: 0, $hist: 0, $hlig: 0, $kern: 0, $liga: 0, $nalt: 0, $ncase: 0, $nspace: 0, $salt: 0, $ss01: 0, $ss02: 0, $ss03: 0, $ss04: 0, $ss05: 0, $swsh: 0, $zero: 0)
+@mixin otfeatures($c2sc: 0, $calt: 0, $clig: 0, $dlig: 0, $frac: 0, $hist: 0, $hlig: 0, $kern: 0, $liga: 0, $nalt: 0, $ncase: 0, $nspace: 0, $salt: 0, $smcp: 0, $ss01: 0, $ss02: 0, $ss03: 0, $ss04: 0, $ss05: 0, $swsh: 0, $zero: 0)
 
 ## Ligatures 
 
