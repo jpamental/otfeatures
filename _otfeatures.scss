@@ -1,6 +1,6 @@
 /* This mixin is meant to help enable/disable OpenType features in your web pages with web fonts that support them */
 
-@mixin otfeatures($c2sc: 0, $calt: 0, $clig: 0, $dlig: 0, $frac: 0, $hist: 0, $hlig: 0, $kern: 0, $liga: 0, $nalt: 0, $ncase: 0, $nspace: 0, $salt: 0, $ss01: 0, $ss02: 0, $ss03: 0, $ss04: 0, $ss05: 0, $swsh: 0, $zero: 0) {
+@mixin otfeatures($c2sc: 0, $calt: 0, $clig: 0, $dlig: 0, $frac: 0, $hist: 0, $hlig: 0, $kern: 0, $liga: 0, $nalt: 0, $ncase: 0, $nspace: 0, $salt: 0, $smcp: 0, $ss01: 0, $ss02: 0, $ss03: 0, $ss04: 0, $ss05: 0, $swsh: 0, $zero: 0) {
 
 $fraclabel: 'frac' !default;
 $fracval: 0 !default;
@@ -19,17 +19,17 @@ $ncaselabel: null !default;
 $ncaselabelalt: null !default;
 $ncaseval: null !default;
 @if $ncase == 0 {
-	$ncaseval: 0;
-	$ncaselabel: 'num';
-	$ncaselabelalt: 'num=0';
+	$ncaseval: null;
+	$ncaselabel: null;
+	$ncaselabelalt: null;
 } @else if $ncase == 'lnum' {
-	$ncaseval: 1;
+	$ncaseval: '1,';
 	$ncaselabel: 'lnum';
-	$ncaselabelalt: 'lnum=1';
+	$ncaselabelalt: 'lnum=1,';
 } @else if $ncase == 'onum' {
-	$ncaseval: 1;
+	$ncaseval: '1,';
 	$ncaselabel: 'onum';
-	$ncaselabelalt: 'onum=1';
+	$ncaselabelalt: 'onum=1,';
 }
 
 $nspacelabel: null !default;
@@ -49,12 +49,12 @@ $nspaceval: null !default;
 	$nspacelabelalt: 'tnum=1';
 }
 
-   -moz-font-feature-settings : 'c2sc=#{$c2sc}','calt=#{$calt}','clig=#{$clig}','dlig=#{$dlig}','#{$fraclabel}=#{$fracval}','hist=#{$hist}','hlig=#{$hlig}','kern= #{$kern}','liga=#{$liga}','nalt=#{$nalt}','salt=#{$salt}','ss01=#{$ss01}','ss02=#{$ss02}','ss03=#{$ss03}','ss04=#{$ss04}','ss05=#{$ss05}','swsh=#{$swsh}','zero=#{$zero}', $ncaselabelalt, $nspacelabelalt;
-   -moz-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval, $nspacelabel $nspaceval;
-   -webkit-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval, $nspacelabel $nspaceval;
-   -ms-font-feature-settings : 'c2sc=#{$c2sc}','calt=#{$calt}','clig=#{$clig}','dlig=#{$dlig}','#{$fraclabel}=#{$fracval}','hist=#{$hist}','hlig=#{$hlig}','kern= #{$kern}','liga=#{$liga}','nalt=#{$nalt}','salt=#{$salt}','ss01=#{$ss01}','ss02=#{$ss02}','ss03=#{$ss03}','ss04=#{$ss04}','ss05=#{$ss05}','swsh=#{$swsh}','zero=#{$zero}', $ncaselabelalt, $nspacelabelalt;
-   -o-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval, $nspacelabel $nspaceval;
-   font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval, $nspacelabel $nspaceval;
+   -moz-font-feature-settings : 'c2sc=#{$c2sc}','calt=#{$calt}','clig=#{$clig}','dlig=#{$dlig}','#{$fraclabel}=#{$fracval}','hist=#{$hist}','hlig=#{$hlig}','kern= #{$kern}','liga=#{$liga}','nalt=#{$nalt}','salt=#{$salt}','smcp=#{$smcp}','ss01=#{$ss01}','ss02=#{$ss02}','ss03=#{$ss03}','ss04=#{$ss04}','ss05=#{$ss05}','swsh=#{$swsh}','zero=#{$zero}', $ncaselabelalt $nspacelabelalt;
+   -moz-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"smcp" $smcp,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval $nspacelabel $nspaceval;
+   -webkit-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"smcp" $smcp,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval $nspacelabel $nspaceval;
+   -ms-font-feature-settings : 'c2sc=#{$c2sc}','calt=#{$calt}','clig=#{$clig}','dlig=#{$dlig}','#{$fraclabel}=#{$fracval}','hist=#{$hist}','hlig=#{$hlig}','kern= #{$kern}','liga=#{$liga}','nalt=#{$nalt}','salt=#{$salt}','smcp=#{$smcp}','ss01=#{$ss01}','ss02=#{$ss02}','ss03=#{$ss03}','ss04=#{$ss04}','ss05=#{$ss05}','swsh=#{$swsh}','zero=#{$zero}', $ncaselabelalt $nspacelabelalt;
+   -o-font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"smcp" $smcp,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval $nspacelabel $nspaceval;
+   font-feature-settings : "c2sc" $c2sc,"calt" $calt,"clig" $clig,"dlig" $dlig,"#{$fraclabel}" $fracval,"hist" $hist,"hlig" $hlig,"kern" $kern,"liga" $liga,"nalt" $nalt,"salt" $salt,"smcp" $smcp,"ss01" $ss01,"ss02" $ss02,"ss03" $ss03,"ss04" $ss04,"ss05" $ss05,"swsh" $swsh,"zero" $zero, $ncaselabel $ncaseval $nspacelabel $nspaceval;
 }
 
 /*
